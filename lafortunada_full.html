@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body style="margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh;">
+    <img id="cam" style="max-width:100%; height:auto;" />
+    <script>
+      function actualizar() {
+        const t = Date.now();
+        document.getElementById("cam").src = "https://emassobrarbe.github.io/webcams/Lafortunada.jpg?v=" + t;
+      }
+      actualizar();
+      setInterval(actualizar, 30000);
+    </script>
+  </body>
+</html>
