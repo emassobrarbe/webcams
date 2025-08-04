@@ -1,35 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Webcam Lafortunada</title>
-  <style>
-    body, html {
-      margin: 0; padding: 0; height: 100%; width: 100%;
-      display: flex; justify-content: center; align-items: center;
-      background: #fff;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <img id="camImage" src="https://emassobrarbe.github.io/webcams/Lafortunada.jpg" alt="Webcam Lafortunada" />
-
-  <script>
-    const img = document.getElementById('camImage');
-    const baseUrl = 'https://emassobrarbe.github.io/webcams/Lafortunada.jpg';
-
-    function reloadImage() {
-      const timestamp = Date.now();
-      img.src = `${baseUrl}?v=${timestamp}`;
-    }
-
-    // Recargar la imagen cada 30 segundos
-    setInterval(reloadImage, 30000);
-  </script>
-</body>
+<html>
+  <body style="margin:0;padding:0;">
+    <img id="cam" style="width:100%;" />
+    <script>
+      function actualizar() {
+        const t = Date.now();
+        document.getElementById("cam").src = "https://emassobrarbe.github.io/webcams/Lafortunada.jpg?v=" + t;
+      }
+      actualizar();
+      setInterval(actualizar, 30000);
+    </script>
+  </body>
 </html>
